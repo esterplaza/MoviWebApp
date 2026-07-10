@@ -27,7 +27,7 @@ class User(db.Model):
         """
         Return a readable string that represents the user
         """
-        return (f"<User {self.id}: {self.name}>")
+        return f"<User {self.id}: {self.name}>"
 
 
 class Movie(db.Model):
