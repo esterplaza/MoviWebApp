@@ -55,3 +55,10 @@ class Movie(db.Model):
     year = db.Column(db.Integer, nullable=False)
     poster_url = db.Column(db.String(500), nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+    def __repr__(self):
+        """
+        Return a readable string that represents the movie
+        """
+        return f"<Movie {self.id}: {self.name}, Director: {self.director}, Release year: {self.year} >"
+

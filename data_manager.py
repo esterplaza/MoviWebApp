@@ -9,7 +9,14 @@ class DataManager():
         new_user = User(name=name)
         db.session.add(new_user)
         db.session.commit()
-        return new_user
+
+    def get_user(self, user_id):
+        """
+        Return the object user with user_id
+        """
+        return db.session.execute(
+            db.select(User).where(User.id == user_id)
+        ).scalar_one_or_none()
 
     def get_users(self):
         """
@@ -29,7 +36,6 @@ class DataManager():
         """
         db.session.add(movie)
         db.session.commit()
-        return movie
 
     def update_movie(self, movie_id, new_title):
         """
