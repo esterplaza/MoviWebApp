@@ -101,7 +101,7 @@ def add_movie(user_id):
         user_id=user_id
     )
     data_manager.add_movie(new_movie)
-    message = f"✅ The movie {new_movie.name} has been succesfully added."
+    message = f"✅ The movie {new_movie.name} has been added successfully."
     return redirect(url_for('get_movies', user_id=user_id, message=message))
 
 
